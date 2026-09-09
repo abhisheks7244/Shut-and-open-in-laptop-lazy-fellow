@@ -60,8 +60,8 @@
 </div>
 
 <style>
-@keyframes fadeInButton {
-    to { opacity: 1; }
+@keyframes popOutButton {
+    to { transform: scale(1); }
 }
 </style>
 
@@ -126,10 +126,18 @@
             <img src="./images/smiley_icon.png" alt="" width="100">
         </div>
         
-<!-- Bouncing Scroll Down Guide (Initially Hidden) -->
-<div id="scroll-guide" style="width: 100%; display: none; flex-direction: column; align-items: center; justify-content: center; margin-top: 20px; color: #FF7882; font-family: 'Dancing Script', cursive, sans-serif; font-size: 32px; font-weight: bold; animation: bounce 2s infinite; text-align: center; position: relative; z-index: 100;">
+<!-- Bouncing Scroll Down Guide (Initially Hidden & Bottom Center Aligned) -->
+<div id="scroll-guide" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: none; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 400px; color: #FF7882; font-family: 'Dancing Script', cursive, sans-serif; font-size: 32px; font-weight: bold; animation: bottomBounce 2s infinite; text-align: center; z-index: 100;">
     <span>Scroll down for a surprise! 👇</span>
 </div>
+
+<style>
+@keyframes bottomBounce {
+    0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+    40% { transform: translate(-50%, -12px); }
+    60% { translate: translate(-50%, -6px); }
+}
+</style>
 
         <div class="boxMail">
             <i class="fa-solid fa-xmark"></i>
