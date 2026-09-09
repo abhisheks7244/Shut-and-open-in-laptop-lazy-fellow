@@ -153,10 +153,9 @@
     </div>
 
     <!-- Bouncing Scroll Down Guide (Initially Hidden) -->
-<div id="scroll-guide" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 0; color: #FF7882; font-family: 'Dancing Script', cursive, sans-serif; font-size: 32px; font-weight: bold; animation: bounce 2s infinite; cursor: pointer; position: relative; z-index: 100; text-align: center; opacity: 0; transform: translateY(20px); transition: all 1s ease; pointer-events: none;">
+<div id="scroll-guide" style="width: 100%; display: none; text-align: center; margin-top: 20px; color: #FF7882; font-family: 'Dancing Script', cursive, sans-serif; font-size: 32px; font-weight: bold; animation: bounce 2s infinite;">
     <span>Scroll down for a surprise! 👇</span>
 </div>
-
 
 <style>
 @keyframes bounce {
@@ -215,13 +214,13 @@
     var intervalContent;
     var intervalTitle;
     $("#btn__letter").on("click", function () {
+        $("#scroll-guide").show();
         $(".box__letter").slideDown()
         setTimeout(function () {
             $(".letter__border").slideDown();
         }, 1000)
         setTimeout(function () {
             intervalTitle = setInterval(function () {
-                document.getElementById('scroll-guide').classList.add('show-guide');
                 if (currentIndexTitle < charArrTitle.length) {
                     document.querySelector(".title__letter").textContent += charArrTitle[currentIndexTitle];
                     let i = document.createElement("i");
