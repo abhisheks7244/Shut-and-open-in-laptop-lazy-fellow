@@ -52,7 +52,7 @@
                     <span></span>
                 </div>
                 <div class="btn">
-                    <button id="btn_letter" onclick="document.getElementById('scroll-guide').classList.add('show-guide')">
+                    <button id="btn_letter">
                         <div class="mail">
                             Click Here Paviii!!
                             <i class="fa-regular fa-envelope"></i>
@@ -155,7 +155,7 @@
     </div>
 
     <!-- Bouncing Scroll Down Guide (Initially Hidden) -->
-<div id="scroll-guide" class="scroll-down-guide" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -120px; margin-bottom: 80px; color: #FF7882; font-family: 'Dancing Script', cursive, sans-serif; font-size: 32px; font-weight: bold; animation: bounce 2s infinite; cursor: pointer; position: relative; z-index: 10; text-align: center; opacity: 0; transform: translateY(20px); transition: all 1s ease; pointer-events: none;">
+<div id="scroll-guide" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -120px; margin-bottom: 80px; color: #FF7882; font-family: 'Dancing Script', cursive, sans-serif; font-size: 32px; font-weight: bold; animation: bounce 2s infinite; cursor: pointer; position: relative; z-index: 10; text-align: center; opacity: 0; transform: translateY(20px); transition: all 1s ease; pointer-events: none;">
     <span>Scroll down for a surprise! 👇</span>
 </div>
 
@@ -171,7 +171,7 @@
     pointer-events: auto !important;
 }
 </style>
-  
+
 <!-- Birthday Video Section -->
 <div id="video__section" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3rem 1rem; position: relative; z-index: 2;">
     <div class="video__wrapper" style="width: 100%; max-width: 600px; background: #fff; padding: 20px; border-radius: 27px; border: 3px solid #333; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; text-align: center;">
@@ -184,6 +184,7 @@
 </div>
 
 </body>
+    
 <script>
     let datetxt = "15th Sep 2004";
     let datatxtletter = "You are a very special girl. I always silently thank you for how you have made me the way i am today. Today, I wish you all the best, lots of health, and lots of joy. Happiest birthday to you.";
@@ -221,6 +222,7 @@
         }, 1000)
         setTimeout(function () {
             intervalTitle = setInterval(function () {
+                document.getElementById('scroll-guide').classList.add('show-guide');
                 if (currentIndexTitle < charArrTitle.length) {
                     document.querySelector(".title__letter").textContent += charArrTitle[currentIndexTitle];
                     let i = document.createElement("i");
