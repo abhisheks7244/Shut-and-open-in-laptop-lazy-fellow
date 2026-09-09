@@ -52,7 +52,7 @@
                     <span></span>
                 </div>
                 <div class="btn">
-                    <button id="btn__letter">
+                    <button id="btn_letter" onclick="document.getElementById('scroll-guide').classList.add('show-guide')">
                         <div class="mail">
                             Click Here Paviii!!
                             <i class="fa-regular fa-envelope"></i>
@@ -153,9 +153,9 @@
             </div>
         </div>
     </div>
-    
-    <!-- Bouncing Scroll Down Guide -->
-<div class="scroll-down-guide" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -120px; margin-bottom: 80px; color: #FF7882; font-family: 'Dancing Script', cursive, sans-serif; font-size: 32px; font-weight: bold; animation: bounce 2s infinite; cursor: pointer; position: relative; z-index: 10; text-align: center;">
+
+    <!-- Bouncing Scroll Down Guide (Initially Hidden) -->
+<div id="scroll-guide" class="scroll-down-guide" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -120px; margin-bottom: 80px; color: #FF7882; font-family: 'Dancing Script', cursive, sans-serif; font-size: 32px; font-weight: bold; animation: bounce 2s infinite; cursor: pointer; position: relative; z-index: 10; text-align: center; opacity: 0; transform: translateY(20px); transition: all 1s ease; pointer-events: none;">
     <span>Scroll down for a surprise! 👇</span>
 </div>
 
@@ -165,8 +165,13 @@
     40% { transform: translateY(-12px); }
     60% { transform: translateY(-6px); }
 }
+.show-guide {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
 </style>
-
+  
 <!-- Birthday Video Section -->
 <div id="video__section" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3rem 1rem; position: relative; z-index: 2;">
     <div class="video__wrapper" style="width: 100%; max-width: 600px; background: #fff; padding: 20px; border-radius: 27px; border: 3px solid #333; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; text-align: center;">
